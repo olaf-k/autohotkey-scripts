@@ -7,4 +7,6 @@ if WinExist(EvernoteWindow)
     Winactivate, %EvernoteWindow%
 else
     Run, "C:\Program Files (x86)\Evernote\Evernote\Evernote.exe"
+    WinWait, %EvernoteWindow%
+    Winactivate, %EvernoteWindow%
 return
