@@ -12,3 +12,10 @@ MButton::Send, !{Left}
 #IfWinActive ahk_class MozillaWindowClass
 +Enter::Send, {Enter}
 #IfWinActive
+;------------------------------------------------------------------------------
+; Move between tabs with Ctrl+PgUp/PgDown in file explorer
+;------------------------------------------------------------------------------
+#IfWinActive ahk_class CabinetWClass
+^PgUp::Send, ^+{Tab}
+^PgDn::Send, ^{Tab}
+#IfWinActive
