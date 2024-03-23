@@ -1,12 +1,15 @@
 ;------------------------------------------------------------------------------
 ; Win+n = shows Evernote
 ;------------------------------------------------------------------------------
-EvernoteWindow := "ahk_class ENMainFrame"
+EvernoteWindow := "ahk_exe Evernote.exe"
 #n::
 if WinExist(EvernoteWindow)
     Winactivate, %EvernoteWindow%
 else
-    Run, "C:\Program Files (x86)\Evernote\Evernote\Evernote.exe"
-    WinWait, %EvernoteWindow%
-    Winactivate, %EvernoteWindow%
+    ; Run, "C:\Users\admin\AppData\Local\Programs\Evernote\Evernote.exe"
+    ; WinWait, %EvernoteWindow%
+    ; Winactivate, %EvernoteWindow%
+    Send, #+{F}
+    Sleep, 25
+    Send, {Esc}
 return
